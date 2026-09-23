@@ -1,0 +1,17 @@
+{
+  "name": "@sandsoftwaresolutions/webhooks",
+  "version": "0.1.0",
+  "description": "Web Crypto helpers for signing and verifying JSON webhooks.",
+  "type": "module",
+  "exports": { ".": { "types": "./src/index.d.ts", "import": "./src/index.js" } },
+  "files": ["src", "README.md", "LICENSE"],
+  "sideEffects": false,
+  "engines": { "node": ">=18" },
+  "scripts": { "test": "node --test", "pack:check": "npm pack --dry-run" },
+  "keywords": ["webhook", "hmac", "signature", "web-crypto"],
+  "license": "MIT",
+  "repository": { "type": "git", "url": "git+https://github.com/SandSoftwareSolutions/ss-webhooks.git" },
+  "bugs": { "url": "https://github.com/SandSoftwareSolutions/ss-webhooks/issues" },
+  "homepage": "https://github.com/SandSoftwareSolutions/ss-webhooks#readme",
+  "publishConfig": { "access": "public" }
+}
