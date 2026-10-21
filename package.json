@@ -1,17 +1,54 @@
 {
   "name": "@sandsoftwaresolutions/webhooks",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Web Crypto helpers for signing and verifying JSON webhooks.",
   "type": "module",
-  "exports": { ".": { "types": "./src/index.d.ts", "import": "./src/index.js" } },
-  "files": ["src", "README.md", "LICENSE"],
+  "main": "./dist/index.cjs",
+  "types": "./src/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./src/index.d.ts",
+        "default": "./src/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "src",
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "sideEffects": false,
-  "engines": { "node": ">=18" },
-  "scripts": { "test": "node --test", "pack:check": "npm pack --dry-run" },
-  "keywords": ["webhook", "hmac", "signature", "web-crypto"],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test && node scripts/build-cjs.mjs --check",
+    "pack:check": "npm pack --dry-run",
+    "build": "node scripts/build-cjs.mjs",
+    "prepack": "node scripts/build-cjs.mjs"
+  },
+  "keywords": [
+    "webhook",
+    "hmac",
+    "signature",
+    "web-crypto"
+  ],
   "license": "MIT",
-  "repository": { "type": "git", "url": "git+https://github.com/SandSoftwareSolutions/ss-webhooks.git" },
-  "bugs": { "url": "https://github.com/SandSoftwareSolutions/ss-webhooks/issues" },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SandSoftwareSolutions/ss-webhooks.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SandSoftwareSolutions/ss-webhooks/issues"
+  },
   "homepage": "https://github.com/SandSoftwareSolutions/ss-webhooks#readme",
-  "publishConfig": { "access": "public" }
+  "publishConfig": {
+    "access": "public"
+  }
 }

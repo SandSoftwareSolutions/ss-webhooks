@@ -10,6 +10,8 @@ Web Crypto HMAC-SHA256 helpers for signing outbound webhooks and verifying incom
 npm install @sandsoftwaresolutions/webhooks
 ```
 
+Works with `import` and `require()`, and ships TypeScript types for both.
+
 ## Verify an incoming webhook
 
 ```js
